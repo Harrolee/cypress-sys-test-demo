@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1 id="pageTitle">Library Name Lookup</h1>
+    <div>
+      <h2>book id</h2>
+      <input id="bookId" data-cy="bookId" />
+      <button data-cy="submitBookId" onclick="getBook()">Get Book Info</button>
+    </div>
+    <br />
+    <h3 id="bookName" data-cy="bookName" text="test"></h3>
+    <br />
+    dev
+    <input
+      data-cy="devRadio"
+      type="radio"
+      id="devButton"
+      name="env"
+      value="dev"
+      onclick="setEnv(value)"
+    /><br />
+    staging
+    <input
+      data-cy="stagingRadio"
+      type="radio"
+      id="stagingButton"
+      name="env"
+      value="staging"
+      onclick="setEnv(value)"
+    /><br />
+    prod
+    <input
+      data-cy="prodRadio"
+      type="radio"
+      id="prodButton"
+      name="env"
+      value="prod"
+      onclick="setEnv(value)"
+    /><br />
+    <!-- <input
+      type="radio"
+      id="prodButton"
+      name="age"
+      value="prod"
+      onclick="setEnv(value)"
+    /> -->
+    <script>
+      var env = "prod";
+
+      var bookDatabase = {
+        dev: {
+          "dev-123": "The Waves",
+        },
+        staging: {
+          "staging-456": "101 Trees Indiana",
+        },
+        prod: {
+          "prod-789": "Pragmatic Programmer",
+        },
+      };
+
+      function getBook() {
+        bookId = document.getElementById("bookId").value;
+        availableBooks = bookDatabase[env];
+        response = availableBooks[bookId];
+        if (!response) {
+          response = "No book for that id";
+        }
+        document.getElementById("bookName").innerHTML = response;
+      }
+
+      function setEnv(selectedEnv) {
+        env = selectedEnv;
+        var pageTitle = "Library Name Lookup";
+        if (env != "prod") {
+          pageTitle = `${env}: ` + pageTitle;
+        }
+        document.getElementById("pageTitle").innerHTML = pageTitle;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "cypress-system",
+  "version": "1.0.0",
+  "description": "Cypress 10 env var example",
+  "main": "index.js",
+  "scripts": {
+    "cypress": "./node_modules/.bin/cypress open",
+    "e2e:dev": "cypress run --e2e --config-file cypress/configs/dev-cypress.config.ts --headed",
+    "e22:stg": "cypress run --e2e --config-file cypress/configs/stg-cypress.config.ts --headed",
+    "e2e:prod": "cypress run --e2e --config-file cypress/configs/prod-cypress.config.ts --headed",
+    "e2e:externalVars": "cypress run --e2e --config-file cypress/configs/dev-cypress.config.ts --headed"
+  },
+  "keywords": [
+    "Cypress10",
+    "example",
+    "SystemTest"
+  ],
+  "author": "Lee Harrold",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.6.0",
+    "typescript": "^4.7.4"
+  }
+}
