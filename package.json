@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "cypress": "./node_modules/.bin/cypress open",
-    "e2e:dev": "cypress run --e2e --config-file cypress/configs/dev-cypress.config.ts --headed",
-    "e22:stg": "cypress run --e2e --config-file cypress/configs/stg-cypress.config.ts --headed",
-    "e2e:prod": "cypress run --e2e --config-file cypress/configs/prod-cypress.config.ts --headed",
-    "e2e:externalVars": "cypress run --e2e --config-file cypress/configs/dev-cypress.config.ts --headed"
+    "e2e:dev-solution1": "cypress run --e2e --config-file cypress/configs/dev-cypress.config.ts --headed",
+    "e2e:staging-solution1": "cypress run --e2e --config-file cypress/configs/stg-cypress.config.ts --headed",
+    "e2e:prod-solution1": "cypress run --e2e --config-file cypress/configs/prod-cypress.config.ts --headed",
+    "e2e:dev-solution2": "cypress run --e2e --env deployment-env=dev --headed",
+    "e2e:staging-solution2": "cypress run --e2e --env deployment-env=staging --headed",
+    "e2e:prod-solution2": "cypress run --e2e --env deployment-env=prod --headed"
   },
   "keywords": [
     "Cypress10",

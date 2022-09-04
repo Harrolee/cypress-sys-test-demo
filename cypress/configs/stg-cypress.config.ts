@@ -9,7 +9,7 @@ export default defineConfig({
     screenshotOnRunFailure: true,
     screenshotsFolder: "cypress/screenshots",
     env: {
-      "deployment-env": "dev",
+      "deployment-env": "staging",
     },
   },
 });
